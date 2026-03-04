@@ -84,6 +84,45 @@ nav {
   color: var(--primary);
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 80px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin-bottom: 24px;
+  }
+
+  .nav-btns {
+    display: none; /* Hide download button on small nav to keep it clean */
+  }
+}
+
 /* Hero Section */
 .hero {
   background-color: #f0faf5;
@@ -771,6 +810,9 @@ section {
   .container {
     padding: 0 20px;
   }
+  .logo-text {
+    font-size: 1.2rem !important;
+  }
   .hero-grid,
   .earn-flex,
   .footer-grid,
@@ -778,17 +820,47 @@ section {
   .features-grid {
     grid-template-columns: 1fr !important;
     text-align: center;
+    overflow: hidden;
+  }
+  .hero {
+    min-height: auto !important;
+    padding: 60px 0 !important;
+    overflow: hidden;
+  }
+  .hero-content {
+    width: 100%;
+    margin: 0 auto;
   }
   .hero-image-wrap {
     justify-content: center;
     margin-top: 40px;
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hero-img-left,
+  .hero-img-right {
+    width: 150px !important;
+    max-width: 45%;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 5px;
   }
   .footer-social {
     justify-content: center;
   }
   .footer-brand p,
-  .about-hero p {
-    margin: 20px auto;
+  .about-hero p,
+  .hero-content p,
+  .hero-tag {
+    margin: 20px auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .modal-content {
     max-width: 90%;
@@ -797,5 +869,43 @@ section {
   }
   .about-hero h1 {
     font-size: 3rem !important;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-content h1 span {
+    display: inline !important;
+  }
+  .hero-content h1 br {
+    display: none;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-btns .btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 !important;
+  }
+  .legal-hero h1 {
+    font-size: 2.8rem !important;
+  }
+  .legal-content {
+    padding: 30px 20px !important;
+  }
+  .legal-section h2 {
+    font-size: 1.5rem !important;
+  }
+  .btn-white,
+  .btn-black {
+    min-width: 100% !important;
+    max-width: 320px;
   }
 }

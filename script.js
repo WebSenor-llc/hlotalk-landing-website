@@ -142,5 +142,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1500);
       });
     }
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        const icon = menuToggle.querySelector("i");
+        if (icon) {
+          icon.classList.toggle("ph-list");
+          icon.classList.toggle("ph-x");
+        }
+      });
+    }
   }
 });
